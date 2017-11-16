@@ -1,4 +1,4 @@
-from __future__ import print_function # must be first in file
+from __future__ import print_function 
 import random
 import time
 import sys 
@@ -9,64 +9,75 @@ import sys
     
 def rps():
     y = 0
-    name = raw_input('What is your name?\n')
-    while y == 0:
-        a = raw_input('\n\nRock, Paper, or Scissors?:\n\n')
-        p1 = a.lower()
+    name = raw_input('What is your name?\n') #get's name
+    while y == 0: #While loop
+        a = raw_input('\n\nRock, Paper, or Scissors?:\n\n') #detects string input
+        p1 = a.lower() #Lowercases input
         print('\n')
-        if p1 == 'paper':
+        if p1 == 'paper': #Input == paper
             paper(name)
-        elif p1 == 'rock':
+        elif p1 == 'rock': #Input == rock
             rock(name)
-        elif p1 == 'scissors':
+        elif p1 == 'scissors': #Input == scissors
             scissors(name)
-        elif p1 == 'end':
+        elif p1 == 'end': #Stops game
             byebye(name)
             y += 1    
-        else:
+            sys.exit() #shuts down program
+        else: #Input != anything
             wiseass()       
 
     
     
 
 def rock(name):
-    cpu = random.randint(1,3)    
-    if cpu == 1:
+    cpu = random.randint(1,3) #CPU chooses
+    if cpu == 1: #CPU chooses rock
         print(name,' chose Rock and the CPU chose Rock. Tie!')
-    if cpu == 2:
+    if cpu == 2: #CPU chooses paper
         print('The CPU chose Paper and' ,name, 'chose Rock. You lose!') 
-    if cpu == 3:
+    if cpu == 3: #CPU chooses scissors
         print (name,' chose Rock and the CPU chose Scissors. You win!') 
         
 def paper(name):
-    cpu = random.randint(1,3)    
-    if cpu == 1:
+    cpu = random.randint(1,3) #CPU chooses    
+    if cpu == 1: #CPU chooses rock
         print(name, 'chose Paper and the CPU chose Rock. You win!')
             
-    elif cpu == 2:
+    elif cpu == 2: #CPU chooses paper
         print(name, ' chose Paper and the CPU chose Paper. Tie!')
             
-    elif cpu == 3:
+    elif cpu == 3: #CPU chooses scissors
         print ('The CPU chose Scissors and' ,name, 'chose Paper. You lose!')    
 
 def scissors(name):
-    cpu = random.randint(1,3)    
-    if cpu == 1:
+    cpu = random.randint(1,3) #CPU chooses  
+    if cpu == 1: #CPU chooses rock
         print('The CPU chose Rock and' ,name, 'chose Scissors. You lose!')
             
-    elif cpu == 2:
+    elif cpu == 2: #CPU chooses paper
         print(name,' chose Scissors and the CPU chose Paper. You win!')
             
-    elif cpu == 3:
+    elif cpu == 3: #CPU chooses scissors
         print (name,' chose Scissors and the CPU chose Scissors. Tie!')  
         
 blah = "Wiseass\n"
 
 def wiseass():
-    for l in blah:
+    for l in blah: #Prints a letter every .2 seconds
         sys.stdout.write(l)
         sys.stdout.flush()
         time.sleep(0.2)
+
+def byebye(name):
+    v = "Have a nice day " ,name, "!\n" 
+    for l in v: #Prints a letter every .2 seconds
+        sys.stdout.write(l)
+        sys.stdout.flush()
+        time.sleep(0.2)
+
+
+# THE BOTTOM WASN'T NECESSARY >:(
 
 def bot():
     o = 1
@@ -93,12 +104,7 @@ def bot():
 
            
             
-def byebye(name):
-    v = "Have a nice day " ,name, "!\n" 
-    for l in v:
-        sys.stdout.write(l)
-        sys.stdout.flush()
-        time.sleep(0.2)
+
 
 
         
